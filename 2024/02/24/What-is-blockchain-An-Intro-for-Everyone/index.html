@@ -34,14 +34,16 @@
 <body>
   <main class="main">
     
-	<header id="header" class="header">
-
-	<div class="container">
-		<nav class="navbar d-flex align-items-center">
-			<a class="brand" href="/">
-				<img class="logo lazyload" data-src="/images/brand.svg" alt="湖北祥和吉运技术服务有限责任公司" role="img">
-			</a>
-			<ul class="main-nav">
+			<header id="header" class="header">
+				
+					<div class="container">
+						<nav class="navbar d-flex align-items-center">
+							<a class="brand" href="/">
+								<img class="logo lazyload" data-src="/images/brand.svg"
+									alt="湖北祥和吉运技术服务有限责任公司" role="img">
+							</a>
+							<span id="GasFee"></span>
+							<ul class="main-nav">
   
     
   <li class="nav-item ">
@@ -64,15 +66,64 @@
   </li>
   
 </ul>
-		</nav>
-		<a id="mobile-nav-toggle">
-			<span class="mobile-nav-toggle-bar"></span>
-			<span class="mobile-nav-toggle-bar"></span>
-			<span class="mobile-nav-toggle-bar"></span>
-		</a>
-	</div>
-</header>
+						</nav>
+						<a id="mobile-nav-toggle">
+							<span class="mobile-nav-toggle-bar"></span>
+							<span class="mobile-nav-toggle-bar"></span>
+							<span class="mobile-nav-toggle-bar"></span>
+						</a>
+					</div>
+			</header>
 
+			<style>
+				.header-absolute .GasFee {
+					color: #f8f9fa;
+				}
+
+				@media screen and (max-width: 600px) {
+					.GasFee {
+						display: none;
+					}
+
+					.logo {
+						width: 80%;
+					}
+				}
+			</style>
+
+			<script>
+				let gasFeeIndicator = document.getElementById("GasFee");
+
+				// 定义请求函数
+				function fetchProposeGasPrice() {
+					var xhr = new XMLHttpRequest(); // 创建 XMLHttpRequest 对象
+					// 设置请求的 URL 和方法
+					xhr.open("GET", "https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=Z1T745U9PQ84IPJWNXK1UHAGHZ85JEDXBN", true);
+					// 设置响应类型
+					xhr.responseType = 'json';
+					// 定义加载完成后的回调函数
+					xhr.onload = function () {
+						if (xhr.status === 200) { // 检查 HTTP 请求状态码
+							var response = xhr.response; // 获取响应数据
+							if (response.status === "1" && response.message === "OK") {
+								let gasPrice = response.result.ProposeGasPrice;
+								console.log("ProposeGasPrice: " + gasPrice);
+								gasFeeIndicator.innerHTML = `Gas: ${gasPrice} Gwei`;
+							} else {
+								console.error("Failed to fetch ProposeGasPrice: ", response.message);
+							}
+						} else {
+							console.error("Request failed with status: " + xhr.status);
+						}
+					};
+					// 发送请求
+					xhr.send();
+				}
+
+				// 使用 setInterval 每 5 秒钟调用一次 fetchProposeGasPrice 函数
+				fetchProposeGasPrice();
+				setInterval(fetchProposeGasPrice, 30000);
+			</script>
     <section>
       <div class="container">
   <article id="post-What-is-blockchain-An-Intro-for-Everyone" class="article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">

@@ -1,7 +1,323 @@
-<div class="index-hello-world">Hello, world!</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+    <meta name="keywords" content="区块链, Blockchain, Web3, 光年之行, 撸毛, 黑奴">
+  
+  
+    <meta name="description" content="一个致力于区块链与 Web3 的新创科技公司">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <title>categories.ejs: undefined |  湖北光年之行科技有限责任公司</title>
+  
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/webclip/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/webclip/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/webclip/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/webclip/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/webclip/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/webclip/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/webclip/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/webclip/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/images/webclip/apple-touch-icon-167x167.png">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-<style>
-    .index-hello-world {
-        font-size: 2em;
-    }
-</style>
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <main class="main">
+    
+			<header id="header" class="header">
+				
+					<div class="container">
+						<nav class="navbar d-flex align-items-center">
+							<a class="brand" href="/">
+								<img class="logo lazyload" data-src="/images/brand.svg"
+									alt="湖北光年之行科技有限责任公司" role="img">
+							</a>
+							<span id="GasFee"></span>
+							<ul class="main-nav">
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/">首页</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/archives">新闻</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/about">关于</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/recruitments">加入我们</a>
+  </li>
+  
+</ul>
+						</nav>
+						<a id="mobile-nav-toggle">
+							<span class="mobile-nav-toggle-bar"></span>
+							<span class="mobile-nav-toggle-bar"></span>
+							<span class="mobile-nav-toggle-bar"></span>
+						</a>
+					</div>
+			</header>
+
+			<style>
+				.header-absolute .GasFee {
+					color: #f8f9fa;
+				}
+
+				@media screen and (max-width: 600px) {
+					.GasFee {
+						display: none;
+					}
+
+					.logo {
+						width: 80%;
+					}
+				}
+			</style>
+
+			<script>
+				let gasFeeIndicator = document.getElementById("GasFee");
+
+				// 定义请求函数
+				function fetchProposeGasPrice() {
+					var xhr = new XMLHttpRequest(); // 创建 XMLHttpRequest 对象
+					// 设置请求的 URL 和方法
+					xhr.open("GET", "https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=Z1T745U9PQ84IPJWNXK1UHAGHZ85JEDXBN", true);
+					// 设置响应类型
+					xhr.responseType = 'json';
+					// 定义加载完成后的回调函数
+					xhr.onload = function () {
+						if (xhr.status === 200) { // 检查 HTTP 请求状态码
+							var response = xhr.response; // 获取响应数据
+							if (response.status === "1" && response.message === "OK") {
+								let gasPrice = response.result.ProposeGasPrice;
+								console.log("ProposeGasPrice: " + gasPrice);
+								gasFeeIndicator.innerHTML = `Gas: ${gasPrice} Gwei`;
+							} else {
+								console.error("Failed to fetch ProposeGasPrice: ", response.message);
+							}
+						} else {
+							console.error("Request failed with status: " + xhr.status);
+						}
+					};
+					// 发送请求
+					xhr.send();
+				}
+
+				// 使用 setInterval 每 5 秒钟调用一次 fetchProposeGasPrice 函数
+				fetchProposeGasPrice();
+				setInterval(fetchProposeGasPrice, 30000);
+			</script>
+    <section>
+      <div class="container">
+  <div class="page-heading">
+  <!-- page-type-title -->
+  
+    
+<h1 class="page-type-title">科普</h1>
+  
+  <!-- page-type-slogan -->
+  <h5 class="slogan font-w-lighter text-gray">
+    
+    实践见真知既是最好的解释
+    
+  </h5>
+</div>
+  
+  
+  
+  
+  
+  
+
+<section class="archives-wrap">
+  <div class="archive-year-wrap">
+    <a href="/archives/2024" class="archive-year">2024</a>
+  </div>
+  <div class="archives">
+    <div class="row flex-wrap">
+      
+      <div class="col-3">
+  <article class="archive-article archive-type-post">
+    <div class="card rounded">
+      
+  
+    <a class="card-img-link" href="/2024/02/27/What-is-the-difference-between-PoW-and-PoS/" rel="gallery_clt4fe3a8000075sjhz6hcuqz">
+      <img class="card-img lazyload" data-src="/images/cover/20240227-What-is-the-difference-between-PoW-and-PoS.jpeg" itemprop="image" alt="gallery">
+    </a>
+  
+
+      <div class="card-body bg-light">
+        
+  
+    <h5 class="article-title mb-0 line-clamp line-clamp-1" itemprop="name">
+      <a href="/2024/02/27/What-is-the-difference-between-PoW-and-PoS/">工作量证明和权益证明的区别是什么？</a>
+    </h5>
+  
+
+        <time class="text-gray" datetime="2024-02-27T13:31:28.000Z" itemprop="datePublished">
+  2024-02-27
+</time>
+        <div class="card-text mt-3 line-clamp line-clamp-2"><p>工作量证明（Proof of Work, PoW）和权益证明（Proof of Stake, PoS）是两种不同的区块链共识机制，它们是用来确认交易并保证网络安全的方法。在回答您的问题之前，我们先简单介绍一下这两种机制的核心概念及背景。</p></div>
+        <hr class="hr">
+        
+        <div class="article-more-link">
+          <a href="/2024/02/27/What-is-the-difference-between-PoW-and-PoS/#more">阅读全文</a>
+        </div>
+        
+      </div>
+    </div>
+  </article>
+</div>
+      
+  
+  
+      <div class="col-3">
+  <article class="archive-article archive-type-post">
+    <div class="card rounded">
+      
+  
+    <a class="card-img-link" href="/2024/02/24/What-is-blockchain-An-Intro-for-Everyone/" rel="gallery_clt3swaqs000bfksj3veucipd">
+      <img class="card-img lazyload" data-src="/images/cover/20240224-What-is-blockchain-An-Intro-for-Everyone.jpeg" itemprop="image" alt="gallery">
+    </a>
+  
+
+      <div class="card-body bg-light">
+        
+  
+    <h5 class="article-title mb-0 line-clamp line-clamp-1" itemprop="name">
+      <a href="/2024/02/24/What-is-blockchain-An-Intro-for-Everyone/">区块链是什么？一篇让外行人看得懂的介绍</a>
+    </h5>
+  
+
+        <time class="text-gray" datetime="2024-02-24T03:23:39.000Z" itemprop="datePublished">
+  2024-02-24
+</time>
+        <div class="card-text mt-3 line-clamp line-clamp-2"><p>区块链技术正处于快速发展阶段，其潜力和应用范围还在不断扩大。通过理解区块链的基本概念和工作原理，普通人也可以把握这项技术如何影响我们的生活和工作。随着技术的进步，我们有理由相信区块链将成为未来数字经济的重要基石。</p></div>
+        <hr class="hr">
+        
+        <div class="article-more-link">
+          <a href="/2024/02/24/What-is-blockchain-An-Intro-for-Everyone/#more">阅读全文</a>
+        </div>
+        
+      </div>
+    </div>
+  </article>
+</div>
+      
+      
+    </div>
+  </div>
+</section>
+
+
+
+
+</div>
+    </section>
+    <footer class="footer pt-5 mt-5">
+  <div class="container">
+    <div class="py-3">
+      <div class="row justify-content-between">
+        <div class="col-6">
+          <img class="filter-gray mb-3 lazyload" height="40" data-src="/images/brand.svg" alt="湖北光年之行科技有限责任公司" role="img">
+          <p class="mb-4">一个致力于区块链与 Web3 的新创科技公司</p>
+          <ul class="list-inline">
+            
+          </ul>
+        </div>
+        <div class="col-4">
+          <h5>友情链接</h5>
+          <ul class="list-inline">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="hr" style="opacity: .25;">
+    <div class="pt-3 pb-5">
+      <ul class="list-inline mb-0 text-center">
+        <li class="list-inline-item">&copy; 2024 湖北光年之行科技有限责任公司</li>
+        
+        <li class="list-inline-item">Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+        <li class="list-inline-item">Designer <a href="https://acorn.imaging.xin/" target="_blank">Xiaomai.eth</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+  </main>
+  <div id="mobile-nav-dimmer"></div>
+<div id="mobile-nav">
+	<div id="mobile-nav-inner">
+		<ul class="mobile-nav">
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/">首页</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/archives">新闻</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/about">关于</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/recruitments">加入我们</a>
+  </li>
+  
+</ul>
+		
+	</div>
+</div>
+
+  <script src="/libs/feather/feather.min.js"></script>
+<script src="/libs/lazysizes/lazysizes.min.js"></script>
+
+	<script src="/libs/tocbot/tocbot.min.js"></script>
+	<script>
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.js-toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: '.js-toc-content',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h2, h3',
+      // For headings inside relative or absolute positioned containers within content.
+      hasInnerContainers: true,
+    });
+	</script>
+
+
+
+
+
+<script src="/js/mobile-nav.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+</html>

@@ -1,7 +1,326 @@
-<div class="index-hello-world">Hello, world!</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+    <meta name="keywords" content="区块链, Blockchain, Web3, 光年之行, 撸毛, 黑奴">
+  
+  
+    <meta name="description" content="一个致力于区块链与 Web3 的新创科技公司">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <title>区块链是什么？一篇让外行人看得懂的介绍 |  湖北光年之行科技有限责任公司</title>
+  
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/webclip/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/webclip/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/webclip/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/webclip/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/webclip/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/webclip/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/webclip/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/webclip/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/images/webclip/apple-touch-icon-167x167.png">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-<style>
-    .index-hello-world {
-        font-size: 2em;
-    }
-</style>
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <main class="main">
+    
+			<header id="header" class="header">
+				
+					<div class="container">
+						<nav class="navbar d-flex align-items-center">
+							<a class="brand" href="/">
+								<img class="logo lazyload" data-src="/images/brand.svg"
+									alt="湖北光年之行科技有限责任公司" role="img">
+							</a>
+							<span id="GasFee"></span>
+							<ul class="main-nav">
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/">首页</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/archives">新闻</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/about">关于</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/recruitments">加入我们</a>
+  </li>
+  
+</ul>
+						</nav>
+						<a id="mobile-nav-toggle">
+							<span class="mobile-nav-toggle-bar"></span>
+							<span class="mobile-nav-toggle-bar"></span>
+							<span class="mobile-nav-toggle-bar"></span>
+						</a>
+					</div>
+			</header>
+
+			<style>
+				.header-absolute .GasFee {
+					color: #f8f9fa;
+				}
+
+				@media screen and (max-width: 600px) {
+					.GasFee {
+						display: none;
+					}
+
+					.logo {
+						width: 80%;
+					}
+				}
+			</style>
+
+			<script>
+				let gasFeeIndicator = document.getElementById("GasFee");
+
+				// 定义请求函数
+				function fetchProposeGasPrice() {
+					var xhr = new XMLHttpRequest(); // 创建 XMLHttpRequest 对象
+					// 设置请求的 URL 和方法
+					xhr.open("GET", "https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=Z1T745U9PQ84IPJWNXK1UHAGHZ85JEDXBN", true);
+					// 设置响应类型
+					xhr.responseType = 'json';
+					// 定义加载完成后的回调函数
+					xhr.onload = function () {
+						if (xhr.status === 200) { // 检查 HTTP 请求状态码
+							var response = xhr.response; // 获取响应数据
+							if (response.status === "1" && response.message === "OK") {
+								let gasPrice = response.result.ProposeGasPrice;
+								console.log("ProposeGasPrice: " + gasPrice);
+								gasFeeIndicator.innerHTML = `Gas: ${gasPrice} Gwei`;
+							} else {
+								console.error("Failed to fetch ProposeGasPrice: ", response.message);
+							}
+						} else {
+							console.error("Request failed with status: " + xhr.status);
+						}
+					};
+					// 发送请求
+					xhr.send();
+				}
+
+				// 使用 setInterval 每 5 秒钟调用一次 fetchProposeGasPrice 函数
+				fetchProposeGasPrice();
+				setInterval(fetchProposeGasPrice, 30000);
+			</script>
+    <section>
+      <div class="container">
+  <article id="post-What-is-blockchain-An-Intro-for-Everyone" class="article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  
+  <div class="article-cover mb-5">
+    
+  
+    
+      <img class="article-cover-img lazyload" data-src="/images/cover/20240224-What-is-blockchain-An-Intro-for-Everyone.jpeg" itemprop="image">
+    
+  
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+      
+  
+    <h1 class="article-title" itemprop="name">
+      区块链是什么？一篇让外行人看得懂的介绍
+    </h1>
+  
+
+      <div class="article-meta">
+        <time class="text-gray" datetime="2024-02-24T03:23:39.000Z" itemprop="datePublished">
+  2024-02-24
+</time>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/knowledge/">科普</a>
+  </div>
+
+        作者：<span>
+  <span class="article-author">小麦.eth</span>
+
+
+
+
+
+
+
+</span>
+      </div>
+      
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>区块链技术正处于快速发展阶段，其潜力和应用范围还在不断扩大。通过理解区块链的基本概念和工作原理，普通人也可以把握这项技术如何影响我们的生活和工作。随着技术的进步，我们有理由相信区块链将成为未来数字经济的重要基石。</p>
+<span id="more"></span>
+
+<hr>
+<h1 id="区块链技术简介：让普通人也能理解的指南"><a href="#区块链技术简介：让普通人也能理解的指南" class="headerlink" title="区块链技术简介：让普通人也能理解的指南"></a>区块链技术简介：让普通人也能理解的指南</h1><p>在当今的数字化时代，区块链技术以其独特的安全性、透明性和去中心化的特点，正在逐步改变我们的世界。从金融交易到数字身份认证，再到智能合约的应用，区块链技术的潜力无穷。但是，什么是区块链？它是如何工作的？本文旨在深入浅出地解释区块链技术，让普通人也能理解这一革命性技术的细节。</p>
+<h2 id="什么是区块链？"><a href="#什么是区块链？" class="headerlink" title="什么是区块链？"></a>什么是区块链？</h2><p>区块链（Blockchain）是一种分布式数据库或公共账本，它通过使用加密技术，以连续的区块链形式安全地记录信息。每个区块包含一系列交易，每个新区块在创建时都会被链接到前一个区块，形成一个链式结构。这种设计不仅确保了数据的不可篡改性，还实现了数据的去中心化存储——没有单一实体可以控制整个区块链网络。</p>
+<h2 id="区块链的核心特性"><a href="#区块链的核心特性" class="headerlink" title="区块链的核心特性"></a>区块链的核心特性</h2><h3 id="去中心化"><a href="#去中心化" class="headerlink" title="去中心化"></a>去中心化</h3><p>传统的数据库系统依赖于中心化的数据管理机构，而区块链技术则允许数据在全球范围内的众多计算机上分布存储。这意味着没有单一点故障，增强了系统的稳定性和抗攻击能力。</p>
+<h3 id="透明性"><a href="#透明性" class="headerlink" title="透明性"></a>透明性</h3><p>由于每个区块链网络参与者都可以访问公共账本，因此所有交易记录对所有人都是透明的。这增强了系统的公正性和透明度。</p>
+<h3 id="安全性和不可篡改性"><a href="#安全性和不可篡改性" class="headerlink" title="安全性和不可篡改性"></a>安全性和不可篡改性</h3><p>每个区块内的数据一旦被记录，就无法被更改或删除。如果要修改某个区块的信息，就需要更改之后所有区块的信息，这在实践中几乎是不可能的。此外，区块链使用加密技术来保护数据安全，防止未经授权的访问和修改。</p>
+<h3 id="自动化能力"><a href="#自动化能力" class="headerlink" title="自动化能力"></a>自动化能力</h3><p>通过智能合约，区块链可以自动执行合同条款。智能合约是存储在区块链上的程序，它们在预定条件满足时自动执行相关操作，无需第三方的介入。</p>
+<h2 id="区块链如何工作？"><a href="#区块链如何工作？" class="headerlink" title="区块链如何工作？"></a>区块链如何工作？</h2><ol>
+<li><strong>交易创建</strong>：当一个新的交易或数据被创建时，它将被发送到区块链网络中的所有节点。</li>
+<li><strong>验证交易</strong>：网络中的节点（参与者）将验证交易的有效性。验证方法依赖于区块链的类型和所使用的共识机制。</li>
+<li><strong>形成区块</strong>：一旦交易被验证，它们就会被组织成数据块。</li>
+<li><strong>加入区块链</strong>：新区块通过解决复杂的数学问题被添加到区块链中，这一过程被称为挖矿。成功解决问题的节点将新区块添加到区块链中，并获得奖励。</li>
+<li><strong>持续增长</strong>：每个新的区块都会安全地连接到前一个区块，形成一条连续的链，而这条链就是区块链。</li>
+</ol>
+<h2 id="区块链的应用领域"><a href="#区块链的应用领域" class="headerlink" title="区块链的应用领域"></a>区块链的应用领域</h2><p>区块链技术已经被应用于多个领域，包括但不限于：</p>
+<ul>
+<li><strong>金融服务</strong>：加密货币交易、跨境支付、贷款和融资等。</li>
+<li><strong>供应链管理</strong>：增加供应链的透明度，有效追踪货物和服务的流动。</li>
+<li><strong>数字身份认证</strong>：提供更安全、不可伪造的身份认证方式。</li>
+<li><strong>智能合约</strong>：自动化执行合同条款，降低欺诈风险和执行成本。</li>
+<li><strong>版权和所有权</strong>：通过 NFTs（非同质化代币）保护数字艺术和其他形式的创作。</li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>区块链技术正处于快速发展阶段，其潜力和应用范围还在不断扩大。通过理解区块链的基本概念和工作原理，普通人也可以把握这项技术如何影响我们的生活和工作。随着技术的进步，我们有理由相信区块链将成为未来数字经济的重要基石。</p>
+<p>希望这篇文章能帮助你更好地理解区块链技术及其重要性。随着区块链技术的不断发展和应用，它无疑将为我们的数字世界带来更多的创新和变革。</p>
+
+    </div>
+    <footer class="article-footer">
+      
+    </footer>
+  </div>
+  
+  
+    
+<nav class="article-nav pt-4 mt-3" id="article-nav">
+  
+    <a href="/2024/02/26/The-positive-outlook-of-blockchain/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          区块链的利好展望
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/02/10/Happy-Chinese-DRAGON-New-Year/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">祝大家 2024 新年快乐</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+</div>
+    </section>
+    <footer class="footer pt-5 mt-5">
+  <div class="container">
+    <div class="py-3">
+      <div class="row justify-content-between">
+        <div class="col-6">
+          <img class="filter-gray mb-3 lazyload" height="40" data-src="/images/brand.svg" alt="湖北光年之行科技有限责任公司" role="img">
+          <p class="mb-4">一个致力于区块链与 Web3 的新创科技公司</p>
+          <ul class="list-inline">
+            
+          </ul>
+        </div>
+        <div class="col-4">
+          <h5>友情链接</h5>
+          <ul class="list-inline">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="hr" style="opacity: .25;">
+    <div class="pt-3 pb-5">
+      <ul class="list-inline mb-0 text-center">
+        <li class="list-inline-item">&copy; 2024 湖北光年之行科技有限责任公司</li>
+        
+        <li class="list-inline-item">Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+        <li class="list-inline-item">Designer <a href="https://acorn.imaging.xin/" target="_blank">Xiaomai.eth</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+  </main>
+  <div id="mobile-nav-dimmer"></div>
+<div id="mobile-nav">
+	<div id="mobile-nav-inner">
+		<ul class="mobile-nav">
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/">首页</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/archives">新闻</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/about">关于</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/recruitments">加入我们</a>
+  </li>
+  
+</ul>
+		
+	</div>
+</div>
+
+  <script src="/libs/feather/feather.min.js"></script>
+<script src="/libs/lazysizes/lazysizes.min.js"></script>
+
+	<script src="/libs/tocbot/tocbot.min.js"></script>
+	<script>
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.js-toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: '.js-toc-content',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h2, h3',
+      // For headings inside relative or absolute positioned containers within content.
+      hasInnerContainers: true,
+    });
+	</script>
+
+
+
+
+
+<script src="/js/mobile-nav.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+</html>

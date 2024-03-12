@@ -1,7 +1,305 @@
-<div class="index-hello-world">Hello, world!</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+    <meta name="keywords" content="区块链, Blockchain, Web3, 祥和吉运">
+  
+  
+    <meta name="description" content="一个致力于区块链与 Web3 的新创科技公司">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <title>区块链的利好展望 |  湖北祥和吉运技术服务有限责任公司</title>
+  
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/webclip/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/webclip/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/webclip/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/webclip/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/webclip/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/webclip/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/webclip/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/webclip/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/images/webclip/apple-touch-icon-167x167.png">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-<style>
-    .index-hello-world {
-        font-size: 2em;
-    }
-</style>
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <main class="main">
+    
+			<header id="header" class="header">
+				
+					<div class="container">
+						<nav class="navbar d-flex align-items-center">
+							<a class="brand" href="/">
+								<img class="logo lazyload" data-src="/images/brand.svg"
+									alt="湖北祥和吉运技术服务有限责任公司" role="img">
+							</a>
+							<span id="GasFee"></span>
+							<ul class="main-nav">
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/">首页</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/archives">新闻</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/about">关于</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/recruitments">加入我们</a>
+  </li>
+  
+</ul>
+						</nav>
+						<a id="mobile-nav-toggle">
+							<span class="mobile-nav-toggle-bar"></span>
+							<span class="mobile-nav-toggle-bar"></span>
+							<span class="mobile-nav-toggle-bar"></span>
+						</a>
+					</div>
+			</header>
+
+			<style>
+				.header-absolute .GasFee {
+					color: #f8f9fa;
+				}
+
+				@media screen and (max-width: 600px) {
+					.GasFee {
+						display: none;
+					}
+
+					.logo {
+						width: 80%;
+					}
+				}
+			</style>
+
+			<script>
+				let gasFeeIndicator = document.getElementById("GasFee");
+
+				// 定义请求函数
+				function fetchProposeGasPrice() {
+					var xhr = new XMLHttpRequest(); // 创建 XMLHttpRequest 对象
+					// 设置请求的 URL 和方法
+					xhr.open("GET", "https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=Z1T745U9PQ84IPJWNXK1UHAGHZ85JEDXBN", true);
+					// 设置响应类型
+					xhr.responseType = 'json';
+					// 定义加载完成后的回调函数
+					xhr.onload = function () {
+						if (xhr.status === 200) { // 检查 HTTP 请求状态码
+							var response = xhr.response; // 获取响应数据
+							if (response.status === "1" && response.message === "OK") {
+								let gasPrice = response.result.ProposeGasPrice;
+								console.log("ProposeGasPrice: " + gasPrice);
+								gasFeeIndicator.innerHTML = `Gas: ${gasPrice} Gwei`;
+							} else {
+								console.error("Failed to fetch ProposeGasPrice: ", response.message);
+							}
+						} else {
+							console.error("Request failed with status: " + xhr.status);
+						}
+					};
+					// 发送请求
+					xhr.send();
+				}
+
+				// 使用 setInterval 每 5 秒钟调用一次 fetchProposeGasPrice 函数
+				fetchProposeGasPrice();
+				setInterval(fetchProposeGasPrice, 30000);
+			</script>
+    <section>
+      <div class="container">
+  <article id="post-The-positive-outlook-of-blockchain" class="article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  
+  <div class="article-cover mb-5">
+    
+  
+    
+      <img class="article-cover-img lazyload" data-src="/images/cover/20240226-The-positive-outlook-of-blockchain.jpeg" itemprop="image">
+    
+  
+
+  </div>
+  
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+      
+  
+    <h1 class="article-title" itemprop="name">
+      区块链的利好展望
+    </h1>
+  
+
+      <div class="article-meta">
+        <time class="text-gray" datetime="2024-02-26T09:36:52.000Z" itemprop="datePublished">
+  2024-02-26
+</time>
+        
+        作者：<span>
+  <span class="article-author">小麦.eth</span>
+
+
+
+
+
+
+
+</span>
+      </div>
+      
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      <p>区块链技术自比特币（Bitcoin）诞生以来，已经从单一的加密货币应用发展成为一个涵盖金融、供应链管理、智能合约、去中心化金融（DeFi）、非同质化代币（NFTs）、以及去中心化应用（DApps）等多个领域的广泛技术框架。现在，让我们从几个角度探讨区块链行业的利好展望。</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="技术成熟与创新加速"><a href="#技术成熟与创新加速" class="headerlink" title="技术成熟与创新加速"></a>技术成熟与创新加速</h2><p>随着区块链技术的不断成熟和优化，包括扩容方案、二层网络（如 Lightning Network 和 Plasma）、以及跨链技术（如 Polkadot 和 Cosmos）的发展，使得区块链更加高效、可扩展，并能支持更多复杂应用的实现。这些技术的进步为行业的长期发展提供了坚实的基础。</p>
+<h2 id="金融领域革新"><a href="#金融领域革新" class="headerlink" title="金融领域革新"></a>金融领域革新</h2><p>区块链技术正逐步改变传统金融行业的运作方式，特别是在 DeFi 领域。DeFi 利用智能合约自动执行金融交易和服务，提供了一个去中心化、开放、透明的金融系统，能够提供借贷、交易、投资、保险等服务，且不需要传统金融机构的参与。这一创新正在吸引大量资金流入，促进了新产品和服务的开发。</p>
+<h2 id="NFTs-与数字版权管理"><a href="#NFTs-与数字版权管理" class="headerlink" title="NFTs 与数字版权管理"></a>NFTs 与数字版权管理</h2><p>NFTs 作为一种证明数字资产所有权和真实性的手段，正在重塑艺术品、游戏道具、收藏品等领域的交易和所有权管理。NFTs 提供了一种全新的方式来确认、买卖和转让数字资产的所有权，对于艺术家、创作者、以及收藏家来说是一个巨大的利好。</p>
+<h2 id="企业级应用与行业解决方案"><a href="#企业级应用与行业解决方案" class="headerlink" title="企业级应用与行业解决方案"></a>企业级应用与行业解决方案</h2><p>随着技术的成熟，越来越多的企业和行业开始探索区块链技术在供应链管理、数据共享、身份验证、以及其他企业服务中的应用。通过建立更加透明、安全、高效的系统，区块链技术有望为各行各业带来革命性的变化。</p>
+<h2 id="政策支持与监管明确"><a href="#政策支持与监管明确" class="headerlink" title="政策支持与监管明确"></a>政策支持与监管明确</h2><p>全球多个国家和地区正在逐步推出区块链技术的支持政策和明确的监管框架，这有助于为区块链和加密货币的发展提供法律确定性，吸引更多的投资，并促进健康的行业发展。</p>
+<p>📈 总结：区块链行业的前景是明亮的，随着技术进步、行业应用的扩展、以及政策和监管的支持，区块链有望在未来几年内实现更广泛的应用和深入人心的变革。</p>
+
+    </div>
+    <footer class="article-footer">
+      
+    </footer>
+  </div>
+  
+  
+    
+<nav class="article-nav pt-4 mt-3" id="article-nav">
+  
+    <a href="/2024/02/27/What-is-the-difference-between-PoW-and-PoS/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          工作量证明和权益证明的区别是什么？
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/02/24/What-is-blockchain-An-Intro-for-Everyone/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">区块链是什么？一篇让外行人看得懂的介绍</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+</div>
+    </section>
+    <footer class="footer pt-5 mt-5">
+  <div class="container">
+    <div class="py-3">
+      <div class="row justify-content-between">
+        <div class="col-6">
+          <img class="filter-gray mb-3 lazyload" height="40" data-src="/images/brand.svg" alt="湖北祥和吉运技术服务有限责任公司" role="img">
+          <p class="mb-4">一个致力于区块链与 Web3 的新创科技公司</p>
+          <ul class="list-inline">
+            
+          </ul>
+        </div>
+        <div class="col-4">
+          <h5>友情链接</h5>
+          <ul class="list-inline">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="hr" style="opacity: .25;">
+    <div class="pt-3 pb-5">
+      <ul class="list-inline mb-0 text-center">
+        <li class="list-inline-item">&copy; 2024 湖北祥和吉运技术服务有限责任公司</li>
+        
+        <li class="list-inline-item">Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+        <li class="list-inline-item">Designer <a href="https://acorn.imaging.xin/" target="_blank">Xiaomai.eth</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+  </main>
+  <div id="mobile-nav-dimmer"></div>
+<div id="mobile-nav">
+	<div id="mobile-nav-inner">
+		<ul class="mobile-nav">
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/">首页</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/archives">新闻</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/about">关于</a>
+  </li>
+  
+    
+  <li class="nav-item ">
+    <a class="nav-item-link" href="/recruitments">加入我们</a>
+  </li>
+  
+</ul>
+		
+	</div>
+</div>
+
+  <script src="/libs/feather/feather.min.js"></script>
+<script src="/libs/lazysizes/lazysizes.min.js"></script>
+
+	<script src="/libs/tocbot/tocbot.min.js"></script>
+	<script>
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.js-toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: '.js-toc-content',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h2, h3',
+      // For headings inside relative or absolute positioned containers within content.
+      hasInnerContainers: true,
+    });
+	</script>
+
+
+
+
+
+<script src="/js/mobile-nav.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+</html>
